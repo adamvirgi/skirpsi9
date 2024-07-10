@@ -13,11 +13,11 @@ age = st.number_input('Age (Month)', min_value=0, max_value=72)
 gender = st.selectbox('Gender', ['Female', 'Male'])
 body_height = st.number_input('Body Height (cm)', min_value=0, max_value=120)
 body_weight = st.number_input('Body Weight (kg)', min_value=0, max_value=30)
-lingkar_kepala = st.number_input
-lingkar_tangan = st.number_input
+lingkar_kepala = st.number_input('Lingkar Kepala', min_value=0, max value=100)
+lingkar_tangan = st.number_input('Lingkar Kepala', min_value=0, max value=20)
 # Preprocess user input
 gender_numeric = 0 if gender == 'Female' else 1
-user_input = np.array([[age, gender_numeric, body_height, body_weight,lingkar_kepala, lingkar_tangan]])
+user_input = np.array([[age, gender_numeric, body_height, body_weight]])
 user_input[:, 3] = minmax.transform(user_input[:, 3].reshape(-1, 1))
 # Predict the status
 prediction = model.predict(user_input)[0]
