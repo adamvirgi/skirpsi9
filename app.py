@@ -1,5 +1,6 @@
 import joblib
 import streamlit as st
+import numpy as np
 # Load the trained SVM model and MinMaxScaler
 model = joblib.load('svm_model.joblib')
 minmax = joblib.load('minmax_scaler.joblib')
